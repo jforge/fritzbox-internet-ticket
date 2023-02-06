@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""fritz box get access profile tickets"""
+"""fritz box refresh access profile tickets"""
 from os import getenv
 from sys import exit, stderr
 import importlib
@@ -13,7 +13,7 @@ if __name__ == '__main__':
                 host=getenv("FRITZBOX_HOST","fritz.box"),
                 user=getenv("FRITZBOX_USERNAME",""),
                 password=password
-            ).get_internet_tickets()
+            ).refresh_internet_tickets()
             if tickets:
                 print("\n".join(tickets))
             else:
